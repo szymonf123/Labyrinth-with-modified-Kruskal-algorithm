@@ -1,0 +1,13 @@
+td {
+    background-color: orange;
+    color : blue;
+    font-size: xx-large;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border: 3px solid blue;
+}
+
+table {
+    border-collapse: collapse;
+}
