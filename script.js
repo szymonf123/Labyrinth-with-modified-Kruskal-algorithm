@@ -2,19 +2,6 @@ let height = 0, width = 0;
 let edges = [];
 let doc = document.getElementById("space");
 
-function readData(event){
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-        const fileContent = e.target.result;
-        edges = fileContent.split("\n");
-        edges = edges.map((x) => parseInt(x));
-        console.log("Liczby z pliku: ", edges);
-        height = edges[0];
-        width = edges[1];
-    }  
-    reader.readAsText(file);
-}
 function printMesh(){
     let tableHTML = '<table>';
     let counter = 0;
@@ -45,7 +32,7 @@ function createBorders(){
 }
 
 function visualizeLabyrinth(event){
-    /*const file = event.target.files[0];
+    const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = (e) => {
         const fileContent = e.target.result;
@@ -54,9 +41,8 @@ function visualizeLabyrinth(event){
         console.log("Liczby z pliku: ", edges);
         height = edges[0];
         width = edges[1];
+        printMesh();
+        createBorders();
     }  
-    reader.readAsText(file);*/
-    readData(event);
-    printMesh();
-    createBorders();
+    reader.readAsText(file);
 }

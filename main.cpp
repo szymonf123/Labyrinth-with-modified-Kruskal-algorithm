@@ -11,6 +11,7 @@ template <typename T>
 class SetPartition {
         std::vector<std::set<T>> partition;
         int maxPower;
+        std::set<T> empty_set;
     public:
         SetPartition(const std::vector<T>& collection);
         void join(std::set<T>& first, std::set<T>& second);
@@ -56,6 +57,7 @@ std::set<T>& SetPartition<T>::find(T element){
         }
     }
     std::cerr << "Blad funkcji find\n";
+    return empty_set;
 }
 
 template <typename T>
@@ -142,7 +144,7 @@ class Labyrinth {
                     file << (*ei).V0()->Number() << "\n" << (*ei).V1()->Number() << "\n";
                     ++ei;
                 }
-
+            std::cout << "Zapisano plik\n";
             file.close();
             }
         }
